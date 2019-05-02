@@ -72,6 +72,8 @@ function getWeather(woeid) {
          maxTemp.innerHTML = weatherObject[0].max_temp.toFixed(0) + '&#8451';
          humidity.innerHTML = weatherObject[0].humidity.toFixed(0) + '&#37';
          wind.innerHTML = ((weatherObject[0].wind_speed) * 1.609344).toFixed(0) + ' km/h';
+
+         weeklyString = "";
          for (let i = 1; i < weatherObject.length; i++) {
             weeklyString += `
                 <div class="fiveDaysForecast">
@@ -86,7 +88,7 @@ function getWeather(woeid) {
          weekInfo.innerHTML += weeklyString;
       })
 }
-// getWeather(Budapest);
+getWeather(Budapest);
 
 // prikaz vremena za današnji dan
 function showToday() {
@@ -108,7 +110,3 @@ function show5days() {
    });
 }
 show5days();
-
-
-
-
