@@ -1,5 +1,8 @@
 * {
    font-family: "Roboto";
+   margin: 0; 
+   padding: 0; 
+   box-sizing: border-box;
 }
 
 html, body, main {
@@ -19,7 +22,7 @@ body {
 .main-container {
    height: 100%;
 }
-/* min-height je izračunata po dimenzijama Galaxy S5 (360*640px) */
+
 .locSearchAndDisplay {
    height: 40%;
    background-color: #293551;
@@ -104,6 +107,7 @@ input[type=submit] {
    height: 50%;
    display: flex;
    flex-wrap: wrap;
+   justify-content: space-between;
    background-color: white;
    min-height: 260px;
 }
@@ -111,6 +115,7 @@ input[type=submit] {
 .info-items-up, .info-items-down {
    display: flex;
    height: 50%;
+   width: 100%;
 }
 
 .info-item-up-left, 
@@ -196,10 +201,4 @@ input[type=submit] {
 
 .active-nav {
    background-color: #d3d3df;
-}
-
-@media screen and (min-height: 850px) {
-   main {
-       height: 820px;
-   }
 }
