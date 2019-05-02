@@ -1,0 +1,205 @@
+* {
+   font-family: "Roboto";
+}
+
+html, body, main {
+   height: 100%;
+}
+
+main {
+   max-width: 430px;
+   margin: auto;
+   position: relative;
+}
+
+body {
+   background-color: skyblue;
+}
+
+.main-container {
+   height: 100%;
+}
+/* min-height je izračunata po dimenzijama Galaxy S5 (360*640px) */
+.locSearchAndDisplay {
+   height: 40%;
+   background-color: #293551;
+   color: white;
+   position: relative;
+   min-height: 200px;
+}
+
+.locSearchAndDisplay h1 {
+   font-size: 28px;
+   font-weight: 300;
+}
+
+.locSearchAndDisplay p {
+   font-weight: 300;
+   font-size: 0.9rem;
+}
+
+.locSearchAndDisplay h2 {
+   display: inline-block;
+   margin-bottom: 0px;
+   font-size: 45px;
+   font-weight: 300;
+}
+
+.location-search {
+   display: flex;
+   justify-content: left;
+   padding-bottom: 15px;
+}
+
+.location-search > input {
+   color: white;
+   padding: 5px;
+   background: transparent;
+   outline: none;
+   border: none;
+   width: 25%;
+   font-weight: 300;
+}
+
+.location-search > input::placeholder {
+   color: white;
+   font-size: 16px;
+}
+
+input[type=submit] {
+   width: 28px;
+   height: 28px;
+   margin-left: 5px;
+   background-color: white;
+   background: url("images/searchLocation.svg") no-repeat;
+   background-size: cover;
+   background-position: center;
+   cursor: pointer;
+}
+
+.weatherDisplay {
+   padding: 15px;
+   display: flex;
+}
+
+.wd-left {
+   flex-basis: 70%;
+}
+
+#weather-descr {
+   font-size: 1rem;
+}
+
+.wd-right {
+   flex-basis: 30%;
+}
+
+.temp-value {
+   position: absolute;
+   bottom: 30px;
+   right: 20px;
+}
+
+.weatherParams {
+   height: 50%;
+   display: flex;
+   flex-wrap: wrap;
+   background-color: white;
+   min-height: 260px;
+}
+
+.info-items-up, .info-items-down {
+   display: flex;
+   height: 50%;
+}
+
+.info-item-up-left, 
+.info-item-up-right, 
+.info-item-down-left, 
+.info-item-down-right {
+   flex-basis: 50%;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}  
+
+.info-item-up-left > h5, 
+.info-item-up-right > h5, 
+.info-item-down-left > h5, 
+.info-item-down-right > h5 {
+   font-size: 18px;
+   color: #293551;
+   font-weight: 300;
+}
+
+.info-item-up-left > p, 
+.info-item-up-right > p, 
+.info-item-down-left > p, 
+.info-item-down-right > p {
+   display: inline-block;
+   color: #293551;
+}
+/* section koji se prikazuje odabirom opcije prognoze za 5 dana */
+.week-weatherParams {
+   background-color: white;
+   overflow: auto;
+   display: flex;
+   flex-direction: column;
+   min-height: 50%;
+   justify-content: center;
+}
+
+.invisible {
+   display: none;
+}
+
+.fiveDaysForecast {
+    display: flex;
+    align-items: center;
+}
+
+.fiveDaysForecast > div {
+    padding: 5px;
+    color:#293551;
+    height: 20%;
+    flex-basis: 25%;
+    text-align: center;
+}
+
+.fiveDaysForecast #weekly-temp {
+    color: #293551;
+}
+/* poslednja sekcija sa navigacijom za period za koji želimo da vidimo vremensku prognozu */
+.navigation {
+   height: 10%;
+   background-color: #e7e7e8;
+   min-height: 55px;
+   display: flex;
+   color: #293551;
+}
+
+.navigation > div {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   cursor: pointer;
+   flex-basis: 50%;
+   text-align: center;
+   align-items: center;
+}
+
+.navigation h5 {
+   margin: 5px 0 0;
+   font-size: 12px;
+}
+
+.active-nav {
+   background-color: #d3d3df;
+}
+
+@media screen and (min-height: 850px) {
+   main {
+       height: 820px;
+   }
+}

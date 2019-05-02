@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>redizajn</title>
+   <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+   <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+   <main>
+      <div class="main-container">
+         <section class="locSearchAndDisplay">
+            <form id="weather-form">
+               <div class="location-search">
+                  <input type="text" placeholder="Find..." id="search" required>
+                  <input type="submit" value="">
+               </div>
+            </form>
+            <div class="weatherDisplay">
+               <div class="wd-left">
+                  <!-- dinamički prikaz lokacije, datuma, i opisa vrem.prilika -->
+                  <h1 id="location-name"></h1>
+                  <p id="date"></p>
+                  <p id="weather-descr"></p>
+               </div>
+               <div class="wd-right" id="wd-right">
+                  <!-- dinamički prikaz odgovarajuće ikonice za vrem.prilike -->
+               </div>
+            </div>
+            <div class="temp-value">
+               <!-- dinamički prikaz trenutne T -->
+               <h2 id="temperature"></h2>
+            </div>
+         </section>
+         <section class="weatherParams" id="info-today">
+            <div class="info-items-up">
+               <div class="info-item-up-left">
+                  <h5>min T</h5>
+                  <img src="images/thermometer.svg" alt="minT_pic" width="23%" height="auto">
+                  <p>
+                     <span id="min-temp"></span>
+                  </p>
+               </div>
+               <div class="info-item-up-right">
+                  <h5>max T</h5>
+                  <img src="images/thermometer.svg" alt="maxT_pic" width="23%" height="auto">
+                  <p>
+                     <span id="max-temp"></span>
+                  </p>
+               </div>
+            </div>
+            <div class="info-items-down">
+               <div class="info-item-down-left">
+                  <h5>humidity</h5>
+                  <img src="images/humidity.svg" alt="humidity_pic" width="23%" height="auto">
+                  <p>
+                     <span id="humid"></span>
+                  </p>
+               </div>
+               <div class="info-item-down-right">
+                  <h5>wind speed</h5>
+                  <img src="images/wind.svg" alt="windSpeed_pic" width="23%" height="auto">
+                  <p>
+                     <span id="wind-speed"></span>
+                  </p>
+               </div>
+            </div>
+         </section>
+         <section class="week-weatherParams invisible" id="week-info">
+            <!-- ovaj deo sa podacima će se pojaviti odabirom opcije prognoze za 5 dana -->
+         </section>
+         <section class="navigation">
+            <div id="today" class="active-nav">
+               <img src="images/one-day-calendar.svg" alt="today_calendar_pic" width="15%" height="auto">
+               <h5>Today</h5>
+            </div>
+            <div id="weekly">
+               <img src="images/days-calendar.svg" alt="5-days_calendar_pic" width="15%" height="auto">
+               <h5>5 days</h5>
+            </div>
+         </section>
+      </div>
+   </main>
+   <script src="main.js"></script>
+</body>
+
+</html>
