@@ -90,7 +90,7 @@ function getWeather(woeid) {
 }
 getWeather(Budapest);
 
-// prikaz vremena za današnji dan
+// prikaz vremenskih prilika za današnji dan
 function showToday() {
    today.addEventListener("click", function () {
       s("info-today").classList.remove("invisible");
@@ -100,7 +100,7 @@ function showToday() {
    });
 }
 showToday();
-// prikaz vremena za 5 dana
+// prikaz vremenskih prilika za narednih 5 dana
 function show5days() {
    weekly.addEventListener("click", function () {
       s("info-today").classList.add("invisible");
