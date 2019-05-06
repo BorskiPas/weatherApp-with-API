@@ -13,12 +13,12 @@ const wind = s("wind-speed");
 const weekInfo = s("week-info");
 const today = s("today");
 const weekly = s("weekly");
-
 const proxy = "https://proxy-requests.herokuapp.com/";
 
 /* using what: MetaWeather's API 
 Method: using Location Search; 
-Info provided in response: Location information */
+Info provided in response: current weather info based on location search */
+
 let upit;
 let woeid;
 
@@ -47,10 +47,11 @@ locationSearch();
 
 /* using what: MetaWeather's API 
 Method: using Location;
-Info provided in response: Location information, and a 5 day forecast
+Info provided in response: current weather info based on the location given, and the 5-day forecast
 URL: /api/location/(woeid)/
-argument (callback) F-je: woeid = Where On Earth ID 
-deo odgovora (response, u formi JSON objekta) koji nam treba: consolidated_weather */
+argument getWaether F-je: woeid = Where On Earth ID 
+deo odgovora koji nam treba: consolidated_weather */
+
 let apiUrl = "https://www.metaweather.com/api/location/";
 let weatherObject;
 let weeklyString = "";
@@ -72,7 +73,7 @@ function getWeather(woeid) {
          maxTemp.innerHTML = weatherObject[0].max_temp.toFixed(0) + '&#8451';
          humidity.innerHTML = weatherObject[0].humidity.toFixed(0) + '&#37';
          wind.innerHTML = ((weatherObject[0].wind_speed) * 1.609344).toFixed(0) + ' km/h';
-
+   // inicijalno "skrivena" sekcija koja se dinamički prikazuje odabirom opcije 5 days
          weeklyString = "";
          for (let i = 1; i < weatherObject.length; i++) {
             weeklyString += `
@@ -100,6 +101,7 @@ function showToday() {
    });
 }
 showToday();
+
 // prikaz vremenskih prilika za narednih 5 dana
 function show5days() {
    weekly.addEventListener("click", function () {
